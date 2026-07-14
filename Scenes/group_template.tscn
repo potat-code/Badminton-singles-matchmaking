@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://c0q1qwxuyuyie"]
+
+[ext_resource type="Script" uid="uid://b0m7eqc3weowm" path="res://Scripts/Classes/GroupBanner.gd" id="1_c4hkf"]
+[ext_resource type="Script" uid="uid://cyvlesfwt0m7n" path="res://Scripts/Classes/ContentFitter.gd" id="2_pjj3h"]
+[ext_resource type="FontFile" uid="uid://c7b504vflh0lg" path="res://Assets/Montserrat.ttf" id="3_pjj3h"]
+
+[sub_resource type="FontVariation" id="FontVariation_pi5ag"]
+base_font = ExtResource("3_pjj3h")
+variation_opentype = {
+2003265652: 900
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_ths0f"]
+font = SubResource("FontVariation_pi5ag")
+font_size = 55
+
+[node name="GroupTemplate" type="Button" unique_id=1631980570]
+modulate = Color(1, 0.8509804, 0.2509804, 1)
+z_index = 10
+custom_minimum_size = Vector2(0, 110)
+offset_right = 531.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+focus_mode = 0
+text = "
+"
+script = ExtResource("1_c4hkf")
+metadata/_custom_type_script = "uid://b0m7eqc3weowm"
+
+[node name="SelectionIndicator" type="ColorRect" parent="." unique_id=1413892607]
+modulate = Color(1, 0.48000002, 1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Title" type="Control" parent="." unique_id=273657789]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -5.0
+offset_right = -10.0
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0, 0.5)
+mouse_filter = 2
+script = ExtResource("2_pjj3h")
+metadata/_custom_type_script = "uid://cyvlesfwt0m7n"
+
+[node name="Main" type="Label" parent="Title" unique_id=2045531394]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0, 0.5)
+text = "EXAMPLE GROUP"
+label_settings = SubResource("LabelSettings_ths0f")
+vertical_alignment = 1
+metadata/CustomAnchor = Vector2(0, 0.5)
+
+[node name="Content" type="RichTextLabel" parent="." unique_id=336900625]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 58.0
+offset_right = 2.0
+offset_bottom = -5.0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0, 0.5)
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=\"34\"]Players: [b]12[/b] | Avg. MMR: [b]2763[/b][/font_size]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0

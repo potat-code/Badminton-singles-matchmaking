@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://beh2boc2cl0rv"]
+
+[ext_resource type="FontFile" uid="uid://c7b504vflh0lg" path="res://Assets/Montserrat.ttf" id="1_donkf"]
+
+[sub_resource type="FontVariation" id="FontVariation_jjvhh"]
+base_font = ExtResource("1_donkf")
+variation_opentype = {
+2003265652: 900
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_6bp64"]
+font = SubResource("FontVariation_jjvhh")
+font_size = 40
+
+[node name="VersesLabel" type="Label" unique_id=999540363]
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "VS"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1

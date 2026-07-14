@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://cr20jhra4q0or"]
+
+[ext_resource type="Script" uid="uid://bug5s7uxmntd6" path="res://Scripts/Classes/PlayerBanner.gd" id="1_a3skb"]
+[ext_resource type="Script" uid="uid://cyvlesfwt0m7n" path="res://Scripts/Classes/ContentFitter.gd" id="2_15h5y"]
+[ext_resource type="Texture2D" uid="uid://bisb0bj0e1kss" path="res://Assets/Backs/Ruby.jpg" id="2_nsigr"]
+[ext_resource type="FontFile" uid="uid://uuvixa6r8d3w" path="res://Assets/Montserrat-Italic.ttf" id="4_nsigr"]
+
+[sub_resource type="FontVariation" id="FontVariation_l86n0"]
+base_font = ExtResource("4_nsigr")
+variation_opentype = {
+2003265652: 900
+}
+opentype_features = {
+1936548720: 1
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_15h5y"]
+font = SubResource("FontVariation_l86n0")
+font_size = 24
+shadow_size = 0
+
+[node name="PlayerTemplate" type="Button" unique_id=309776125]
+z_index = 10
+clip_contents = true
+custom_minimum_size = Vector2(0, 60)
+offset_right = 464.0
+offset_bottom = 60.0
+size_flags_horizontal = 3
+focus_mode = 0
+text = "
+"
+script = ExtResource("1_a3skb")
+metadata/_custom_type_script = "uid://b0m7eqc3weowm"
+
+[node name="Back" type="TextureRect" parent="." unique_id=573337248]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1200.0
+offset_top = -940.5
+offset_bottom = 960.5
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.075, 0.075)
+pivot_offset_ratio = Vector2(1, 0.5)
+texture = ExtResource("2_nsigr")
+
+[node name="ColorRect" type="ColorRect" parent="Back" unique_id=1032073487]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -10.0
+anchor_bottom = 1.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.99607843, 0.09803922, 0.31764707, 1)
+metadata/_edit_lock_ = true
+
+[node name="SelectionIndicator" type="ColorRect" parent="." unique_id=1413892607]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.5019608)
+
+[node name="Second" type="ColorRect" parent="SelectionIndicator" unique_id=203299582]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.6
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.05490196)
+
+[node name="Third" type="ColorRect" parent="SelectionIndicator" unique_id=1396589978]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6
+anchor_right = 0.8
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.023529412)
+
+[node name="Title" type="Control" parent="." unique_id=407089432]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_right = -10.0
+offset_bottom = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0, 0.5)
+mouse_filter = 2
+script = ExtResource("2_15h5y")
+metadata/_custom_type_script = "uid://cyvlesfwt0m7n"
+
+[node name="Main" type="RichTextLabel" parent="Title" unique_id=1925191677]
+clip_contents = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=\"28
+\"][b]FIRSTNAME LASTNAME[/b][/font_size]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+metadata/CustomAnchor = Vector2(0, 0.5)
+
+[node name="Content" type="RichTextLabel" parent="." unique_id=326543515]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 31.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=\"17\"][sc]MMR: [b]2763[/b] | Birthdate: 2/2763[/font_size]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ExtraInfo" type="Label" parent="." unique_id=1218517683]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -98.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.57, 0.57)
+pivot_offset_ratio = Vector2(1, 1)
+text = "[ In group ]"
+label_settings = SubResource("LabelSettings_15h5y")

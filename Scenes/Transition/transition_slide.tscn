@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cw4ao64wg0fda"]
+
+[node name="TransitionSlide" type="ColorRect" unique_id=1870559789]
+anchors_preset = -1
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0

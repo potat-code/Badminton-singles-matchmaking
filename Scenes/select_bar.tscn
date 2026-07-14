@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dwo3g8y2jfcj4"]
+
+[node name="SelectBar" type="ColorRect" unique_id=2124479311]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -5.0
+offset_right = 400.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2

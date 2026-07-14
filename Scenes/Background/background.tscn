@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://vrefshylrehi"]
+
+[ext_resource type="Script" uid="uid://bj2t8cr1ep1rs" path="res://Scripts/background.gd" id="1_4aqey"]
+[ext_resource type="PackedScene" uid="uid://jm3tudfecbqa" path="res://Scenes/Background/slide.tscn" id="2_xgxeb"]
+[ext_resource type="PackedScene" uid="uid://vaqm7ija1ogm" path="res://Scenes/Background/slide_image.tscn" id="3_ltlj5"]
+
+[node name="Background" type="Node2D" unique_id=1795920815]
+script = ExtResource("1_4aqey")
+slide = ExtResource("2_xgxeb")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2040761120]
+
+[node name="SlideImage" parent="." unique_id=666394713 instance=ExtResource("3_ltlj5")]
+modulate = Color(1, 0.8075, 0.23000002, 1)
+position = Vector2(-9, -518)
+scale = Vector2(1746.9999, 1062)

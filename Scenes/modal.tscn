@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://de4h0nf5h2m44"]
+
+[ext_resource type="Theme" uid="uid://swvubgedjb2j" path="res://Resources/main_theme.tres" id="1_6g7tg"]
+
+[node name="Modal" type="Control"]
+z_index = 4096
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6g7tg")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2

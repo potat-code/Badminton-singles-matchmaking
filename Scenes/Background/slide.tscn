@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://jm3tudfecbqa"]
+
+[ext_resource type="Script" uid="uid://b6ulpfaxuakmy" path="res://Scripts/slide.gd" id="1_8moo8"]
+[ext_resource type="PackedScene" uid="uid://vaqm7ija1ogm" path="res://Scenes/Background/slide_image.tscn" id="2_8moo8"]
+
+[node name="Slide" type="Node2D"]
+script = ExtResource("1_8moo8")
+slide_image = ExtResource("2_8moo8")

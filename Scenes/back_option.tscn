@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bsonn4p0bdma2"]
+
+[ext_resource type="Script" uid="uid://bhu8farmesecv" path="res://Scripts/Classes/AnimatedButton.gd" id="1_odxuk"]
+[ext_resource type="Texture2D" uid="uid://bisb0bj0e1kss" path="res://Assets/Backs/Ruby.jpg" id="2_eq1gf"]
+[ext_resource type="FontFile" uid="uid://c7b504vflh0lg" path="res://Assets/Montserrat.ttf" id="3_qa4vl"]
+
+[sub_resource type="FontVariation" id="FontVariation_jjvhh"]
+base_font = ExtResource("3_qa4vl")
+variation_opentype = {
+2003265652: 900
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_6bp64"]
+font = SubResource("FontVariation_jjvhh")
+font_size = 40
+
+[node name="BackOption" type="Button" unique_id=1305780626]
+clip_contents = true
+custom_minimum_size = Vector2(0, 38.563)
+offset_right = 300.0
+offset_bottom = 38.563
+script = ExtResource("1_odxuk")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Image" type="TextureRect" parent="." unique_id=1371621366]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1200.0
+offset_top = -950.4999
+offset_bottom = 950.5001
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.05, 0.05)
+pivot_offset_ratio = Vector2(1, 0.5)
+mouse_filter = 2
+texture = ExtResource("2_eq1gf")
+
+[node name="ColorRect" type="ColorRect" parent="Image" unique_id=1784536573]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -10.0
+anchor_bottom = 1.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.99607843, 0.09803922, 0.31764707, 1)
+metadata/_edit_lock_ = true
+
+[node name="Text" type="Label" parent="." unique_id=2122186877]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.000008
+offset_bottom = 8.999992
+grow_horizontal = 2
+scale = Vector2(0.405, 0.405)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "Select"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1

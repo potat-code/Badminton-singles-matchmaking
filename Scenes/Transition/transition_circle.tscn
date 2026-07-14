@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cfrvl5vqxxwe8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k12tt"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 999999
+corner_radius_top_right = 999999
+corner_radius_bottom_right = 999999
+corner_radius_bottom_left = 999999
+corner_detail = 1
+
+[sub_resource type="Theme" id="Theme_h1bgf"]
+Panel/styles/panel = SubResource("StyleBoxFlat_k12tt")
+
+[node name="TransitionCircle" type="Panel" unique_id=435687580]
+anchors_preset = -1
+offset_left = -750.0
+offset_top = -750.0
+offset_right = 750.0
+offset_bottom = 750.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = SubResource("Theme_h1bgf")

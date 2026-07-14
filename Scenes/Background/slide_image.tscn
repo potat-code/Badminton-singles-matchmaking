@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://vaqm7ija1ogm"]
+
+[ext_resource type="Texture2D" uid="uid://dwx8n8laexscc" path="res://Assets/Flat.png" id="1_uoxgq"]
+
+[node name="SlideImage" type="Sprite2D"]
+scale = Vector2(1600, 180)
+texture = ExtResource("1_uoxgq")
+offset = Vector2(0, 0.5)

@@ -1,0 +1,447 @@
+[gd_scene load_steps=25 format=3 uid="uid://dykdr5onq0q4y"]
+
+[ext_resource type="PackedScene" uid="uid://vrefshylrehi" path="res://Scenes/background.tscn" id="1_jjgbg"]
+[ext_resource type="FontFile" uid="uid://c7b504vflh0lg" path="res://Assets/Montserrat.ttf" id="2_bo1nx"]
+[ext_resource type="Script" uid="uid://bhu8farmesecv" path="res://Scripts/Classes/AnimatedButton.gd" id="3_jjvhh"]
+[ext_resource type="Script" uid="uid://suuu7y1hoyxo" path="res://Scripts/exit.gd" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://bm7vlmpyaastg" path="res://Scripts/groups.gd" id="5_6bp64"]
+[ext_resource type="Theme" uid="uid://swvubgedjb2j" path="res://Resources/main_theme.tres" id="5_kry3j"]
+[ext_resource type="Script" uid="uid://c4ldup7xrm12s" path="res://Scripts/title_main.gd" id="5_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://c0q1qwxuyuyie" path="res://Scenes/group_template.tscn" id="7_hptm8"]
+[ext_resource type="FontFile" uid="uid://uuvixa6r8d3w" path="res://Assets/Montserrat-Italic.ttf" id="9_d1ilt"]
+[ext_resource type="Script" uid="uid://c58bwxqjjbgut" path="res://Scripts/opening_screen.gd" id="10_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://dwx8n8laexscc" path="res://Assets/Flat.png" id="11_6iyac"]
+
+[sub_resource type="FontVariation" id="FontVariation_8gbba"]
+base_font = ExtResource("2_bo1nx")
+variation_opentype = {
+2003265652: 900
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_jjgbg"]
+font = SubResource("FontVariation_8gbba")
+font_size = 60
+
+[sub_resource type="FontVariation" id="FontVariation_jjvhh"]
+base_font = ExtResource("2_bo1nx")
+variation_opentype = {
+2003265652: 900
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_kry3j"]
+font = SubResource("FontVariation_jjvhh")
+font_size = 80
+
+[sub_resource type="FontVariation" id="FontVariation_kry3j"]
+base_font = ExtResource("2_bo1nx")
+variation_opentype = {
+2003265652: 600
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_21xkr"]
+font = SubResource("FontVariation_kry3j")
+font_size = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6iyac"]
+bg_color = Color(0, 0, 0, 0.49803922)
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_fdnlq"]
+Panel/styles/panel = SubResource("StyleBoxFlat_6iyac")
+
+[sub_resource type="LabelSettings" id="LabelSettings_6bp64"]
+font = SubResource("FontVariation_jjvhh")
+font_size = 40
+
+[sub_resource type="Theme" id="Theme_ynf5e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hptm8"]
+font_size = 64
+
+[sub_resource type="FontVariation" id="FontVariation_jkdf5"]
+base_font = ExtResource("9_d1ilt")
+variation_opentype = {
+2003265652: 500
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_wsu2k"]
+font = SubResource("FontVariation_jkdf5")
+font_size = 32
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Title" type="Node2D" parent="."]
+
+[node name="Background" parent="Title" instance=ExtResource("1_jjgbg")]
+z_index = -4096
+z_as_relative = false
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Control" parent="Title"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -275.0
+offset_bottom = -275.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Top" type="Label" parent="Title/Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -55.0
+offset_right = 45.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BADMINTON"
+label_settings = SubResource("LabelSettings_jjgbg")
+vertical_alignment = 2
+
+[node name="Bottom" type="Label" parent="Title/Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -527.5
+offset_top = 40.0
+offset_right = 527.5
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "SINGLES MATCHMAKING"
+label_settings = SubResource("LabelSettings_kry3j")
+horizontal_alignment = 1
+
+[node name="Exit" type="Button" parent="Title/Title"]
+modulate = Color(1, 0.47000003, 0.4788332, 1)
+layout_mode = 0
+offset_left = 236.0
+offset_top = -5.0
+offset_right = 520.0
+offset_bottom = 40.0
+focus_mode = 0
+text = "
+"
+script = ExtResource("4_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Title/Title/Exit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "×"
+label_settings = SubResource("LabelSettings_21xkr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Main" type="Control" parent="Title"]
+self_modulate = Color(0.4250002, 0.25, 1, 1)
+clip_contents = true
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -81.0
+offset_right = 500.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_kry3j")
+script = ExtResource("5_ynf5e")
+
+[node name="Panel" type="Panel" parent="Title/Main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 34.0
+theme = SubResource("Theme_fdnlq")
+
+[node name="Groups" type="Control" parent="Title/Main"]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 34.0
+script = ExtResource("5_6bp64")
+group_template = ExtResource("7_hptm8")
+
+[node name="Options" type="VBoxContainer" parent="Title/Main/Groups"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -125.0
+offset_right = 400.0
+offset_bottom = 125.0
+grow_vertical = 2
+
+[node name="NewGroup" type="Button" parent="Title/Main/Groups/Options"]
+modulate = Color(0.49650007, 1, 0.47000003, 1)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+text = "
+"
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Title/Main/Groups/Options/NewGroup"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -74.0
+offset_right = 455.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "NEW GROUP"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Title/Main/Groups/Options/NewGroup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+mouse_filter = 2
+theme = SubResource("Theme_ynf5e")
+placeholder_text = "Enter new group name here..."
+alignment = 1
+max_length = 20
+
+[node name="CharacterLimit" type="Label" parent="Title/Main/Groups/Options/NewGroup/LineEdit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/20"
+horizontal_alignment = 2
+
+[node name="Cancel" type="Button" parent="Title/Main/Groups/Options/NewGroup/LineEdit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_bottom = 34.0
+grow_horizontal = 0
+focus_mode = 0
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Label" type="Label" parent="Title/Main/Groups/Options/NewGroup/LineEdit/Cancel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.5
+offset_top = -22.5
+offset_right = 1.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "×"
+label_settings = SubResource("LabelSettings_hptm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Okay" type="Button" parent="Title/Main/Groups/Options/NewGroup/LineEdit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_right = 32.0
+grow_vertical = 2
+focus_mode = 0
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Label" type="Label" parent="Title/Main/Groups/Options/NewGroup/LineEdit/Okay"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(24, 43)
+text = "✓"
+label_settings = SubResource("LabelSettings_hptm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoadGroup" type="Button" parent="Title/Main/Groups/Options"]
+modulate = Color(0.45, 0.5966665, 1, 1)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+text = "
+"
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Title/Main/Groups/Options/LoadGroup"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -74.0
+offset_right = 455.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "LOAD GROUP"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeleteGroup" type="Button" parent="Title/Main/Groups/Options"]
+modulate = Color(1, 0.42000002, 0.42000002, 1)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+text = "
+"
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Title/Main/Groups/Options/DeleteGroup"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -74.0
+offset_right = 455.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "DELETE GROUP"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Groups" type="ScrollContainer" parent="Title/Main/Groups"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 425.0
+offset_top = -125.0
+offset_right = -25.0
+offset_bottom = 125.0
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Main" type="VBoxContainer" parent="Title/Main/Groups/Groups"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="NoGroupsLabel" type="Label" parent="Title/Main/Groups/Groups"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "[ You have no groups ]"
+label_settings = SubResource("LabelSettings_wsu2k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Players" type="Control" parent="Title/Main"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1000.0
+offset_right = 1000.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Title/Main/Players"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -13.0
+offset_right = 113.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "this is the players help"
+
+[node name="TabBar" type="TabBar" parent="Title/Main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_bottom = 34.0
+focus_mode = 0
+current_tab = 0
+tab_count = 2
+tab_0/title = "Groups"
+tab_1/title = "Players"
+
+[node name="OpeningScreen" type="Node2D" parent="."]
+visible = false
+script = ExtResource("10_d1ilt")
+
+[node name="Bar" type="Sprite2D" parent="OpeningScreen"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -356.50006)
+scale = Vector2(1152, 65.00004)
+texture = ExtResource("11_6iyac")
+offset = Vector2(0, 1)
+
+[connection signal="pressed" from="Title/Title/Exit" to="Title/Title/Exit" method="_on_pressed"]
+[connection signal="text_changed" from="Title/Main/Groups/Options/NewGroup/LineEdit" to="Title/Main/Groups" method="_on_new_group_text_changed"]
+[connection signal="tab_changed" from="Title/Main/TabBar" to="Title/Main" method="_on_tab_changed"]

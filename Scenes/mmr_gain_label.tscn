@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bftqjd8x63gvx"]
+
+[ext_resource type="FontFile" uid="uid://c7b504vflh0lg" path="res://Assets/Montserrat.ttf" id="1_r0c6c"]
+
+[sub_resource type="FontVariation" id="FontVariation_xdxeq"]
+base_font = ExtResource("1_r0c6c")
+variation_opentype = {
+2003265652: 900
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_pme0m"]
+font = SubResource("FontVariation_xdxeq")
+font_size = 45
+
+[node name="MmrGainLabel" type="Label" unique_id=1489190455]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2763MMR (+47)"
+label_settings = SubResource("LabelSettings_pme0m")
+horizontal_alignment = 1
+vertical_alignment = 1

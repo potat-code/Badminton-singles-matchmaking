@@ -1,0 +1,2020 @@
+[gd_scene format=3 uid="uid://dykdr5onq0q4y"]
+
+[ext_resource type="Script" uid="uid://bm8rdc87asdeh" path="res://Scripts/main.gd" id="1_7k868"]
+[ext_resource type="PackedScene" uid="uid://vrefshylrehi" path="res://Scenes/Background/background.tscn" id="1_jjgbg"]
+[ext_resource type="FontFile" uid="uid://c7b504vflh0lg" path="res://Assets/Montserrat.ttf" id="2_bo1nx"]
+[ext_resource type="Script" uid="uid://bhu8farmesecv" path="res://Scripts/Classes/AnimatedButton.gd" id="3_jjvhh"]
+[ext_resource type="Script" uid="uid://suuu7y1hoyxo" path="res://Scripts/exit.gd" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://bm7vlmpyaastg" path="res://Scripts/groups.gd" id="5_6bp64"]
+[ext_resource type="Theme" uid="uid://swvubgedjb2j" path="res://Resources/main_theme.tres" id="5_kry3j"]
+[ext_resource type="Script" uid="uid://c4ldup7xrm12s" path="res://Scripts/title_main.gd" id="5_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://c0q1qwxuyuyie" path="res://Scenes/group_template.tscn" id="7_hptm8"]
+[ext_resource type="FontFile" uid="uid://uuvixa6r8d3w" path="res://Assets/Montserrat-Italic.ttf" id="9_d1ilt"]
+[ext_resource type="Script" uid="uid://vt84gi7xnice" path="res://Scripts/scroll_container.gd" id="9_fevyy"]
+[ext_resource type="Script" uid="uid://brexdaapf6ji3" path="res://Scripts/no_groups_label.gd" id="10_6iyac"]
+[ext_resource type="Script" uid="uid://c58bwxqjjbgut" path="res://Scripts/opening_screen.gd" id="10_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://dwx8n8laexscc" path="res://Assets/Flat.png" id="11_6iyac"]
+[ext_resource type="Texture2D" uid="uid://bgi5rxtgs3m4w" path="res://Assets/RubyShrugging.png" id="11_b3802"]
+[ext_resource type="Script" uid="uid://bi381s5i88s5c" path="res://Scripts/players.gd" id="13_hibaj"]
+[ext_resource type="Script" uid="uid://dv23s77h86xpx" path="res://Scripts/toast.gd" id="13_jkdf5"]
+[ext_resource type="PackedScene" uid="uid://cr20jhra4q0or" path="res://Scenes/player_template.tscn" id="14_ee4r6"]
+[ext_resource type="PackedScene" uid="uid://n7rbfcl5hqev" path="res://Scenes/toast_label.tscn" id="14_jkdf5"]
+[ext_resource type="Texture2D" uid="uid://nonkfko2ylbf" path="res://Assets/Nickel.png" id="14_pdsj5"]
+[ext_resource type="Script" uid="uid://dv134be2gt4ot" path="res://Scripts/transition.gd" id="15_wsu2k"]
+[ext_resource type="Script" uid="uid://nwoud2ky5nnu" path="res://Scripts/mmr_info.gd" id="16_gt3je"]
+[ext_resource type="PackedScene" uid="uid://cfrvl5vqxxwe8" path="res://Scenes/Transition/transition_circle.tscn" id="16_h1bgf"]
+[ext_resource type="PackedScene" uid="uid://cw4ao64wg0fda" path="res://Scenes/Transition/transition_slide.tscn" id="17_b3802"]
+[ext_resource type="Script" uid="uid://cf4ra6pelhxd3" path="res://Scripts/back_picker.gd" id="17_u50mg"]
+[ext_resource type="PackedScene" uid="uid://bsonn4p0bdma2" path="res://Scenes/back_option.tscn" id="18_cbgmd"]
+[ext_resource type="Script" uid="uid://i2bb7h0ihs0o" path="res://Scripts/search.gd" id="19_1w6v2"]
+[ext_resource type="Texture2D" uid="uid://ctto2m2b7bbt" path="res://Assets/SearchIcon.png" id="19_cbgmd"]
+[ext_resource type="Texture2D" uid="uid://bisb0bj0e1kss" path="res://Assets/Backs/Ruby.jpg" id="19_ueoa1"]
+[ext_resource type="Script" uid="uid://cyvlesfwt0m7n" path="res://Scripts/Classes/ContentFitter.gd" id="22_7k868"]
+[ext_resource type="Script" uid="uid://bmqjynvicv2nu" path="res://Scripts/return_to_title.gd" id="22_hpc6h"]
+[ext_resource type="PackedScene" uid="uid://beh2boc2cl0rv" path="res://Scenes/verses_label.tscn" id="23_r33sp"]
+[ext_resource type="Script" uid="uid://bxgpiid0ykgnu" path="res://Scripts/game.gd" id="24_e08e2"]
+[ext_resource type="Texture2D" uid="uid://dbkikng02d5q7" path="res://Assets/Grassy.png" id="24_kltya"]
+[ext_resource type="Script" uid="uid://bu36i0mxdcsrk" path="res://Scripts/text_scaler.gd" id="25_hdf80"]
+
+[sub_resource type="FontVariation" id="FontVariation_8gbba"]
+base_font = ExtResource("2_bo1nx")
+variation_opentype = {
+2003265652: 900
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_jjgbg"]
+font = SubResource("FontVariation_8gbba")
+font_size = 60
+
+[sub_resource type="FontVariation" id="FontVariation_jjvhh"]
+base_font = ExtResource("2_bo1nx")
+variation_opentype = {
+2003265652: 900
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_kry3j"]
+font = SubResource("FontVariation_jjvhh")
+font_size = 80
+
+[sub_resource type="FontVariation" id="FontVariation_kry3j"]
+base_font = ExtResource("2_bo1nx")
+variation_opentype = {
+2003265652: 600
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_21xkr"]
+font = SubResource("FontVariation_kry3j")
+font_size = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6iyac"]
+bg_color = Color(0, 0, 0, 0.49803922)
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_fdnlq"]
+Panel/styles/panel = SubResource("StyleBoxFlat_6iyac")
+
+[sub_resource type="LabelSettings" id="LabelSettings_6bp64"]
+font = SubResource("FontVariation_jjvhh")
+font_size = 40
+
+[sub_resource type="Theme" id="Theme_ynf5e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hptm8"]
+font_size = 64
+
+[sub_resource type="FontVariation" id="FontVariation_u50mg"]
+base_font = ExtResource("9_d1ilt")
+variation_opentype = {
+2003265652: 500
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_cbgmd"]
+font = SubResource("FontVariation_u50mg")
+font_size = 64
+
+[sub_resource type="FontVariation" id="FontVariation_7k868"]
+base_font = ExtResource("9_d1ilt")
+variation_opentype = {
+2003265652: 500
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_hpc6h"]
+font = SubResource("FontVariation_7k868")
+font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdnlq"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="Theme" id="Theme_jkdf5"]
+Panel/styles/panel = SubResource("StyleBoxFlat_fdnlq")
+
+[sub_resource type="FontVariation" id="FontVariation_jkdf5"]
+base_font = ExtResource("9_d1ilt")
+variation_opentype = {
+2003265652: 500
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_wsu2k"]
+font = SubResource("FontVariation_jkdf5")
+font_size = 32
+
+[sub_resource type="FontVariation" id="FontVariation_r33sp"]
+base_font = ExtResource("2_bo1nx")
+variation_opentype = {
+2003265652: 396
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_hdf80"]
+font = SubResource("FontVariation_r33sp")
+font_size = 60
+
+[sub_resource type="FontVariation" id="FontVariation_kltya"]
+base_font = ExtResource("2_bo1nx")
+variation_opentype = {
+2003265652: 900
+}
+opentype_features = {
+1936548720: 1
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_e08e2"]
+font = SubResource("FontVariation_kltya")
+font_size = 100
+
+[node name="Main" type="Node2D" unique_id=1500567535]
+script = ExtResource("1_7k868")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=834494257]
+
+[node name="Title" type="Node2D" parent="." unique_id=1244153612]
+unique_name_in_owner = true
+visible = false
+
+[node name="Title" type="Control" parent="Title" unique_id=29216330]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -275.0
+offset_bottom = -275.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Top" type="Label" parent="Title/Title" unique_id=927736854]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -55.0
+offset_right = 45.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BADMINTON"
+label_settings = SubResource("LabelSettings_jjgbg")
+vertical_alignment = 2
+
+[node name="Bottom" type="Label" parent="Title/Title" unique_id=1640457856]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -527.5
+offset_top = 40.0
+offset_right = 527.5
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "SINGLES MATCHMAKING"
+label_settings = SubResource("LabelSettings_kry3j")
+horizontal_alignment = 1
+
+[node name="Exit" type="Button" parent="Title/Title" unique_id=11728711]
+modulate = Color(1, 0.47000003, 0.4788332, 1)
+clip_contents = true
+layout_mode = 0
+offset_left = 236.0
+offset_top = -5.0
+offset_right = 520.0
+offset_bottom = 40.0
+focus_mode = 0
+text = "
+"
+script = ExtResource("4_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Title/Title/Exit" unique_id=936292373]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "×"
+label_settings = SubResource("LabelSettings_21xkr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Main" type="Control" parent="Title" unique_id=1111752288]
+self_modulate = Color(0.4250002, 0.25, 1, 1)
+clip_contents = true
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -81.0
+offset_right = 500.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_kry3j")
+script = ExtResource("5_ynf5e")
+
+[node name="Panel" type="Panel" parent="Title/Main" unique_id=987658480]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 34.0
+theme = SubResource("Theme_fdnlq")
+
+[node name="Groups" type="Control" parent="Title/Main" unique_id=188464436]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1000.0
+offset_top = 34.0
+offset_right = -1000.0
+script = ExtResource("5_6bp64")
+group_template = ExtResource("7_hptm8")
+
+[node name="Options" type="VBoxContainer" parent="Title/Main/Groups" unique_id=1521871548]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -125.0
+offset_right = 400.0
+offset_bottom = 125.0
+grow_vertical = 2
+
+[node name="NewGroup" type="Button" parent="Title/Main/Groups/Options" unique_id=1666717986]
+modulate = Color(0.49650007, 1, 0.47000003, 1)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+text = "
+"
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Title/Main/Groups/Options/NewGroup" unique_id=234653000]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -74.0
+offset_right = 455.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "NEW GROUP"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Title/Main/Groups/Options/NewGroup" unique_id=1710697179]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+mouse_filter = 2
+theme = SubResource("Theme_ynf5e")
+placeholder_text = "Enter new group name here..."
+alignment = 1
+max_length = 20
+
+[node name="CharacterLimit" type="Label" parent="Title/Main/Groups/Options/NewGroup/LineEdit" unique_id=161365485]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/20"
+horizontal_alignment = 2
+
+[node name="Cancel" type="Button" parent="Title/Main/Groups/Options/NewGroup/LineEdit" unique_id=1202506930]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_bottom = 34.0
+grow_horizontal = 0
+focus_mode = 0
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Label" type="Label" parent="Title/Main/Groups/Options/NewGroup/LineEdit/Cancel" unique_id=1135867047]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.5
+offset_top = -22.5
+offset_right = 1.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "×"
+label_settings = SubResource("LabelSettings_hptm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Confirm" type="Button" parent="Title/Main/Groups/Options/NewGroup/LineEdit" unique_id=188460134]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_right = 32.0
+grow_vertical = 2
+focus_mode = 0
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Label" type="Label" parent="Title/Main/Groups/Options/NewGroup/LineEdit/Confirm" unique_id=2115570482]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(24, 43)
+text = "✓"
+label_settings = SubResource("LabelSettings_hptm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Title/Main/Groups/Options/NewGroup/LineEdit" unique_id=792596124]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -406.5
+offset_top = -25.499992
+offset_right = 406.5
+offset_bottom = 53.500008
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.215, 0.215)
+pivot_offset_ratio = Vector2(0.5, 0)
+text = "You can add players later"
+label_settings = SubResource("LabelSettings_cbgmd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoadGroup" type="Button" parent="Title/Main/Groups/Options" unique_id=1860405149]
+modulate = Color(0.45, 0.5966665, 1, 1)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+text = "
+"
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Title/Main/Groups/Options/LoadGroup" unique_id=1922005291]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -74.0
+offset_right = 455.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "LOAD GROUP"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EditGroup" type="Button" parent="Title/Main/Groups/Options" unique_id=10663755]
+modulate = Color(1, 0.8666667, 0, 1)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+text = "
+"
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Title/Main/Groups/Options/EditGroup" unique_id=817509283]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "EDIT GROUP"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Main" type="Control" parent="Title/Main/Groups/Options/EditGroup" unique_id=1533900301]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EditName" type="Button" parent="Title/Main/Groups/Options/EditGroup/Main" unique_id=1139441622]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_right = 10.0
+grow_vertical = 2
+focus_mode = 0
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Title/Main/Groups/Options/EditGroup/Main/EditName" unique_id=121693615]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.55, 0.55)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "EDIT NAME"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cancel" type="Button" parent="Title/Main/Groups/Options/EditGroup/Main" unique_id=1910227804]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_right = 20.0
+grow_vertical = 2
+focus_mode = 0
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Title/Main/Groups/Options/EditGroup/Main/Cancel" unique_id=1411239925]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "×"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EditPlayers" type="Button" parent="Title/Main/Groups/Options/EditGroup/Main" unique_id=1140400558]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+grow_vertical = 2
+focus_mode = 0
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Title/Main/Groups/Options/EditGroup/Main/EditPlayers" unique_id=810920864]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.55, 0.55)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "EDIT PLAYERS"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="Control" parent="Title/Main/Groups/Options/EditGroup" unique_id=546962076]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="Title/Main/Groups/Options/EditGroup/Name" unique_id=275348746]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+mouse_filter = 2
+theme = SubResource("Theme_ynf5e")
+placeholder_text = "Enter new group name here..."
+alignment = 1
+max_length = 20
+
+[node name="CharacterLimit" type="Label" parent="Title/Main/Groups/Options/EditGroup/Name/LineEdit" unique_id=839212984]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/20"
+horizontal_alignment = 2
+
+[node name="Cancel" type="Button" parent="Title/Main/Groups/Options/EditGroup/Name/LineEdit" unique_id=272671422]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_bottom = 34.0
+grow_horizontal = 0
+focus_mode = 0
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Label" type="Label" parent="Title/Main/Groups/Options/EditGroup/Name/LineEdit/Cancel" unique_id=1020495487]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.5
+offset_top = -22.5
+offset_right = 1.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "×"
+label_settings = SubResource("LabelSettings_hptm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Confirm" type="Button" parent="Title/Main/Groups/Options/EditGroup/Name/LineEdit" unique_id=1993813927]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_right = 32.0
+grow_vertical = 2
+focus_mode = 0
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Label" type="Label" parent="Title/Main/Groups/Options/EditGroup/Name/LineEdit/Confirm" unique_id=1247829238]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(24, 43)
+text = "✓"
+label_settings = SubResource("LabelSettings_hptm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Title/Main/Groups/Options/EditGroup/Name/LineEdit" unique_id=3130400]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -406.5
+offset_top = -25.499992
+offset_right = 406.5
+offset_bottom = 53.500008
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.215, 0.215)
+pivot_offset_ratio = Vector2(0.5, 0)
+text = "You can add players later"
+label_settings = SubResource("LabelSettings_cbgmd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Players" type="Control" parent="Title/Main/Groups/Options/EditGroup" unique_id=191149118]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Confirm" type="Button" parent="Title/Main/Groups/Options/EditGroup/Players" unique_id=1083448443]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_right = 64.0
+grow_vertical = 2
+focus_mode = 0
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Title/Main/Groups/Options/EditGroup/Players/Confirm" unique_id=135453588]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "✓"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="Label" parent="Title/Main/Groups/Options/EditGroup/Players" unique_id=1904535491]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -29.666656
+offset_top = -12.0
+offset_right = 93.66666
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "New buttons have appeared in the tab bar."
+label_settings = SubResource("LabelSettings_hpc6h")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="DeleteGroup" type="Button" parent="Title/Main/Groups/Options" unique_id=1085582250]
+modulate = Color(1, 0.42000002, 0.42000002, 1)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+text = "
+"
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="HoldText" type="Label" parent="Title/Main/Groups/Options/DeleteGroup" unique_id=345466089]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "[0.0]"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HoldProgress" type="Panel" parent="Title/Main/Groups/Options/DeleteGroup/HoldText" unique_id=339662875]
+self_modulate = Color(1.224127, 1.224127, 1.224127, 0.5)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_jkdf5")
+
+[node name="Text" type="Label" parent="Title/Main/Groups/Options/DeleteGroup" unique_id=1146546213]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "DELETE GROUP"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tooltip" type="Label" parent="Title/Main/Groups/Options/DeleteGroup/Text" unique_id=579611229]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -169.0
+offset_top = -77.0
+offset_right = 169.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(169, 25)
+text = "(Hold to delete)"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="Title/Main/Groups" unique_id=1240294401]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 425.0
+offset_top = -125.0
+offset_right = -25.0
+offset_bottom = 125.0
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+scroll_hint_mode = 1
+
+[node name="Control" type="Control" parent="Title/Main/Groups/Scroll" unique_id=1578782528]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("9_fevyy")
+
+[node name="NoGroupsLabel" type="Label" parent="Title/Main/Groups/Scroll/Control" unique_id=153311062]
+layout_mode = 0
+offset_top = 105.0
+offset_right = 550.0
+offset_bottom = 145.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "[ You have no groups ]"
+label_settings = SubResource("LabelSettings_wsu2k")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_6iyac")
+id = "Groups"
+
+[node name="ROOOOOOOOOBBBBBBBEEEEEEEEEEEEEEEEEEEEYY" type="Sprite2D" parent="Title/Main/Groups/Scroll/Control/NoGroupsLabel" unique_id=416760435]
+position = Vector2(413.69153, -11.5)
+scale = Vector2(0.36879432, 0.36879432)
+texture = ExtResource("11_b3802")
+
+[node name="Main" type="VBoxContainer" parent="Title/Main/Groups/Scroll/Control" unique_id=2138506806]
+layout_mode = 0
+offset_right = 550.0
+offset_bottom = 250.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Players" type="Control" parent="Title/Main" unique_id=2049769651]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("13_hibaj")
+player_template = ExtResource("14_ee4r6")
+
+[node name="Options" type="VBoxContainer" parent="Title/Main/Players" unique_id=2056421563]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -125.0
+offset_right = -25.0
+offset_bottom = 125.0
+grow_vertical = 2
+
+[node name="NewPlayer" type="Button" parent="Title/Main/Players/Options" unique_id=826415824]
+modulate = Color(0.49650007, 1, 0.47000003, 1)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+text = "
+"
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Title/Main/Players/Options/NewPlayer" unique_id=772073214]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -74.0
+offset_right = 455.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "NEW PLAYER"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EditPlayer" type="Button" parent="Title/Main/Players/Options" unique_id=2035585305]
+modulate = Color(1, 0.8666667, 0, 1)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+text = "
+"
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Title/Main/Players/Options/EditPlayer" unique_id=568991730]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "EDIT PLAYER"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeletePlayer" type="Button" parent="Title/Main/Players/Options" unique_id=681980689]
+modulate = Color(1, 0.41960785, 0.41960785, 1)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+text = "
+"
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="HoldText" type="Label" parent="Title/Main/Players/Options/DeletePlayer" unique_id=343810775]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "[0.0]"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HoldProgress" type="Panel" parent="Title/Main/Players/Options/DeletePlayer/HoldText" unique_id=1661220059]
+self_modulate = Color(1.224127, 1.224127, 1.224127, 0.5)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_jkdf5")
+
+[node name="Text" type="Label" parent="Title/Main/Players/Options/DeletePlayer" unique_id=328560721]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "DELETE PLAYER"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tooltip" type="Label" parent="Title/Main/Players/Options/DeletePlayer/Text" unique_id=187436419]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -169.0
+offset_top = -93.0
+offset_right = 169.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(169, 25)
+text = "(Hold to delete)"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="Title/Main/Players" unique_id=1762594405]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -85.5
+offset_right = -425.0
+offset_bottom = 124.5
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+scroll_hint_mode = 1
+
+[node name="Control" type="Control" parent="Title/Main/Players/Scroll" unique_id=1612607416]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("9_fevyy")
+
+[node name="NoPlayersLabel" type="Label" parent="Title/Main/Players/Scroll/Control" unique_id=2106377218]
+layout_mode = 0
+offset_top = 105.0
+offset_right = 550.0
+offset_bottom = 145.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "[ You have no players ]"
+label_settings = SubResource("LabelSettings_wsu2k")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_6iyac")
+id = "Players"
+
+[node name="Nickel" type="Sprite2D" parent="Title/Main/Players/Scroll/Control/NoPlayersLabel" unique_id=1226175515]
+position = Vector2(154, -15.459625)
+scale = Vector2(0.15642461, 0.15642464)
+texture = ExtResource("14_pdsj5")
+
+[node name="Main" type="VBoxContainer" parent="Title/Main/Players/Scroll/Control" unique_id=1331875940]
+layout_mode = 0
+offset_right = 550.0
+offset_bottom = 210.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 1
+
+[node name="Create" type="Control" parent="Title/Main/Players" unique_id=1195904018]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -125.0
+offset_right = -25.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="FirstName" type="LineEdit" parent="Title/Main/Players/Create" unique_id=649896390]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.333
+anchor_right = 0.5
+anchor_bottom = 0.7
+offset_top = 33.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+mouse_filter = 2
+theme = SubResource("Theme_ynf5e")
+placeholder_text = "First name..."
+alignment = 1
+max_length = 12
+
+[node name="CharacterLimit" type="Label" parent="Title/Main/Players/Create/FirstName" unique_id=1131795276]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/12"
+horizontal_alignment = 2
+
+[node name="LastName" type="LineEdit" parent="Title/Main/Players/Create" unique_id=1231586385]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.333
+anchor_right = 1.0
+anchor_bottom = 0.7
+offset_top = 33.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+mouse_filter = 2
+theme = SubResource("Theme_ynf5e")
+placeholder_text = "Last name... (opt.)"
+alignment = 1
+max_length = 12
+
+[node name="CharacterLimit" type="Label" parent="Title/Main/Players/Create/LastName" unique_id=945784198]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/12"
+horizontal_alignment = 2
+
+[node name="DateOfBirth" type="LineEdit" parent="Title/Main/Players/Create" unique_id=300647145]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.66
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+mouse_filter = 2
+theme = SubResource("Theme_ynf5e")
+placeholder_text = "D.O.B. MM/YYYY"
+alignment = 1
+max_length = 7
+
+[node name="CharacterLimit" type="Label" parent="Title/Main/Players/Create/DateOfBirth" unique_id=872870361]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/12"
+horizontal_alignment = 2
+
+[node name="MMR" type="LineEdit" parent="Title/Main/Players/Create" unique_id=325443879]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.66
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+mouse_filter = 2
+theme = SubResource("Theme_ynf5e")
+placeholder_text = "MMR"
+alignment = 1
+max_length = 4
+
+[node name="CharacterLimit" type="Label" parent="Title/Main/Players/Create/MMR" unique_id=1083027890]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/12"
+horizontal_alignment = 2
+
+[node name="Info" type="Button" parent="Title/Main/Players/Create/MMR" unique_id=1451920876]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_bottom = 30.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_filter = 2
+script = ExtResource("16_gt3je")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Label" type="Label" parent="Title/Main/Players/Create/MMR/Info" unique_id=698351135]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.5
+offset_top = -22.5
+offset_right = 1.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "?"
+label_settings = SubResource("LabelSettings_hptm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cancel" type="Button" parent="Title/Main/Players/Create" unique_id=1462444635]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.333
+offset_bottom = -3.0
+grow_horizontal = 0
+focus_mode = 0
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Label" type="Label" parent="Title/Main/Players/Create/Cancel" unique_id=442410019]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.5
+offset_top = -22.5
+offset_right = 1.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "×"
+label_settings = SubResource("LabelSettings_hptm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Confirm" type="Button" parent="Title/Main/Players/Create" unique_id=1848699837]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.333
+offset_bottom = -3.0
+grow_vertical = 2
+focus_mode = 0
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Label" type="Label" parent="Title/Main/Players/Create/Confirm" unique_id=665231141]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(24, 43)
+text = "✓"
+label_settings = SubResource("LabelSettings_hptm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackPicker" type="Button" parent="Title/Main/Players/Create" unique_id=765905031]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.333
+anchor_right = 1.0
+anchor_bottom = 0.333
+offset_top = 1.0
+offset_bottom = 32.0
+mouse_filter = 2
+script = ExtResource("17_u50mg")
+back_option_template = ExtResource("18_cbgmd")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="ColorRect" type="ColorRect" parent="Title/Main/Players/Create/BackPicker" unique_id=137179275]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.23000002, 0.24283314, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Title/Main/Players/Create/BackPicker/ColorRect" unique_id=1569103800]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1200.0
+offset_top = -967.5
+offset_bottom = 933.5
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.05, 0.05)
+pivot_offset_ratio = Vector2(1, 0.5)
+mouse_filter = 2
+texture = ExtResource("19_ueoa1")
+
+[node name="Text" type="Label" parent="Title/Main/Players/Create/BackPicker" unique_id=1678551784]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.000008
+offset_bottom = 8.999992
+grow_horizontal = 2
+scale = Vector2(0.405, 0.405)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "Select back"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackPicker" type="ScrollContainer" parent="Title/Main/Players" unique_id=1682901314]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 600.0
+offset_top = -157.25
+offset_right = -25.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Title/Main/Players/BackPicker" unique_id=35360993]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 0
+theme_override_constants/separation = 4
+
+[node name="Search" type="LineEdit" parent="Title/Main/Players" unique_id=1342543115]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 25.0
+offset_top = 22.5
+offset_right = 575.0
+offset_bottom = 56.5
+script = ExtResource("19_1w6v2")
+
+[node name="TextureRect" type="TextureRect" parent="Title/Main/Players/Search" unique_id=3952695]
+layout_mode = 0
+offset_left = 520.0
+offset_right = 550.0
+offset_bottom = 30.0
+pivot_offset_ratio = Vector2(1, 0)
+texture = ExtResource("19_cbgmd")
+expand_mode = 1
+
+[node name="Tooltip" type="Label" parent="Title/Main/Players" unique_id=512302609]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 254.0
+offset_right = 883.0
+offset_bottom = 294.0
+scale = Vector2(0.49, 0.49)
+pivot_offset_ratio = Vector2(0, 1)
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Shift + click to multi-select"
+label_settings = SubResource("LabelSettings_wsu2k")
+vertical_alignment = 2
+
+[node name="TabBar" type="TabBar" parent="Title/Main" unique_id=223689668]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_bottom = 34.0
+focus_mode = 0
+current_tab = 0
+tab_count = 2
+tab_0/title = "Groups"
+tab_1/title = "Players"
+
+[node name="AddToGroup" type="Button" parent="Title/Main" unique_id=1526331655]
+modulate = Color(1, 0.8666667, 0, 1)
+layout_mode = 0
+offset_left = 334.0
+offset_right = 1004.0
+offset_bottom = 34.0
+size_flags_vertical = 3
+focus_mode = 0
+text = "
+"
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Title/Main/AddToGroup" unique_id=467328816]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.999999
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "Add to group: MMMMMMMMMMMMMMMMMMMM"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RemoveFromGroup" type="Button" parent="Title/Main" unique_id=1199290416]
+modulate = Color(1, 0.8666667, 0, 1)
+layout_mode = 0
+offset_left = 208.0
+offset_right = 334.0
+offset_bottom = 34.0
+size_flags_vertical = 3
+focus_mode = 0
+text = "
+"
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Title/Main/RemoveFromGroup" unique_id=1803690375]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "Remove"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Game" type="Node2D" parent="." unique_id=128599202]
+unique_name_in_owner = true
+
+[node name="Main" type="Control" parent="Game" unique_id=199593877]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -535.0
+offset_top = -158.0
+offset_right = 535.0
+offset_bottom = 296.0
+theme = ExtResource("5_kry3j")
+script = ExtResource("24_e08e2")
+player_template = ExtResource("14_ee4r6")
+verses_label_template = ExtResource("23_r33sp")
+
+[node name="Panel" type="Panel" parent="Game/Main" unique_id=177292247]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_fdnlq")
+
+[node name="FindMatchButton" type="Button" parent="Game/Main" unique_id=2026942681]
+modulate = Color(0.36, 0.8186667, 1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = 85.0
+toggle_mode = true
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Game/Main/FindMatchButton" unique_id=375382611]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -74.0
+offset_right = 455.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "FIND MATCH"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Matches" type="Control" parent="Game/Main" unique_id=137690617]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Scroll" type="ScrollContainer" parent="Game/Main/Matches" unique_id=469658433]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = -112.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+scroll_hint_mode = 1
+
+[node name="Control" type="Control" parent="Game/Main/Matches/Scroll" unique_id=689834223]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("9_fevyy")
+
+[node name="Main" type="VBoxContainer" parent="Game/Main/Matches/Scroll/Control" unique_id=2048119427]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NoMatchesLabel" type="Label" parent="Game/Main/Matches/Scroll/Control" unique_id=976559092]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -234.0
+offset_top = -20.0
+offset_right = 234.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "[ No matches are ongoing... ]"
+label_settings = SubResource("LabelSettings_wsu2k")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_6iyac")
+id = "Matches"
+
+[node name="Ruby" type="Sprite2D" parent="Game/Main/Matches/Scroll/Control/NoMatchesLabel" unique_id=758938136]
+position = Vector2(107, -15.5)
+scale = Vector2(0.4278011, 0.4278011)
+texture = ExtResource("11_b3802")
+
+[node name="Grassy" type="Sprite2D" parent="Game/Main/Matches/Scroll/Control/NoMatchesLabel" unique_id=2002977425]
+position = Vector2(496, 22.499985)
+scale = Vector2(0.04582991, 0.045829915)
+texture = ExtResource("24_kltya")
+
+[node name="MarkScore" type="Button" parent="Game/Main/Matches" unique_id=1910496842]
+modulate = Color(1, 0.91466665, 0.36, 1)
+z_index = 20
+layout_mode = 0
+offset_left = 1045.0
+offset_top = 23.0
+offset_right = 1365.0
+offset_bottom = 83.0
+rotation = 1.5707964
+toggle_mode = true
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Game/Main/Matches/MarkScore" unique_id=1497430232]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "MARK SCORE"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Main" type="Control" parent="Game/Main/Matches/MarkScore" unique_id=1944256617]
+anchors_preset = 0
+offset_left = -93.99999
+offset_top = 154.0
+offset_right = 315.0
+offset_bottom = 375.0
+rotation = -1.5707964
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("25_hdf80")
+
+[node name="PlayerOne" type="LineEdit" parent="Game/Main/Matches/MarkScore/Main" unique_id=724515077]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.4
+theme_override_font_sizes/font_size = 56
+text = "11"
+placeholder_text = "Mark MMMMMMMMMMMM's score..."
+alignment = 1
+max_length = 2
+
+[node name="PlayerTwo" type="LineEdit" parent="Game/Main/Matches/MarkScore/Main" unique_id=2135509657]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 0.8
+theme_override_font_sizes/font_size = 20
+placeholder_text = "Mark Ruby's score..."
+alignment = 1
+max_length = 2
+
+[node name="Confirm" type="Button" parent="Game/Main/Matches/MarkScore/Main" unique_id=557940633]
+modulate = Color(0.49, 1, 0.6175, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 0.5
+anchor_bottom = 1.0
+toggle_mode = true
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Game/Main/Matches/MarkScore/Main/Confirm" unique_id=1626804803]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.400002
+offset_bottom = 2.4000015
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "✓"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cancel" type="Button" parent="Game/Main/Matches/MarkScore/Main" unique_id=785719267]
+modulate = Color(1, 0.53, 0.53, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+toggle_mode = true
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Game/Main/Matches/MarkScore/Main/Cancel" unique_id=74870608]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.9000015
+offset_bottom = 2.9000015
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "×"
+label_settings = SubResource("LabelSettings_hdf80")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FindMatch" type="Control" parent="Game/Main" unique_id=926730244]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Options" type="VBoxContainer" parent="Game/Main/FindMatch" unique_id=2001203851]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 350.0
+offset_bottom = -25.0
+
+[node name="MatchPlayerWithRandom" type="Button" parent="Game/Main/FindMatch/Options" unique_id=1848952189]
+modulate = Color(0.45, 0.63333344, 1, 1)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Game/Main/FindMatch/Options/MatchPlayerWithRandom" unique_id=1546486252]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "MATCH PLAYER
+WITH RANDOM"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 35
+
+[node name="MatchTwoPlayers" type="Button" parent="Game/Main/FindMatch/Options" unique_id=1630648730]
+modulate = Color(0.65, 0.3, 1, 1)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Game/Main/FindMatch/Options/MatchTwoPlayers" unique_id=1441596082]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "MATCH TWO
+PLAYERS"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 35
+
+[node name="MatchTwoRandom" type="Button" parent="Game/Main/FindMatch/Options" unique_id=1006473243]
+modulate = Color(1, 0.3, 0.6149999, 1)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("3_jjvhh")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Game/Main/FindMatch/Options/MatchTwoRandom" unique_id=554125735]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "MATCH TWO
+RANDOM"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 35
+
+[node name="Scroll" type="ScrollContainer" parent="Game/Main/FindMatch" unique_id=360183880]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 375.0
+offset_top = 75.0
+offset_right = -25.0
+offset_bottom = -25.0
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+scroll_hint_mode = 1
+
+[node name="Control" type="Control" parent="Game/Main/FindMatch/Scroll" unique_id=140882222]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("9_fevyy")
+
+[node name="NoPlayersLabel" type="Label" parent="Game/Main/FindMatch/Scroll/Control" unique_id=1015446385]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.5
+offset_top = -20.0
+offset_right = 183.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "[ You have no players ]"
+label_settings = SubResource("LabelSettings_wsu2k")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_6iyac")
+id = "FindMatch"
+
+[node name="Nickel" type="TextureRect" parent="Game/Main/FindMatch/Scroll/Control/NoPlayersLabel" unique_id=524190950]
+layout_mode = 0
+offset_left = 37.0
+offset_top = -46.459595
+offset_right = 395.0
+offset_bottom = 337.5404
+scale = Vector2(0.15642461, 0.15642464)
+texture = ExtResource("14_pdsj5")
+
+[node name="Main" type="VBoxContainer" parent="Game/Main/FindMatch/Scroll/Control" unique_id=1338032832]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 1
+
+[node name="Search" type="LineEdit" parent="Game/Main/FindMatch" unique_id=607599510]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 375.0
+offset_top = 22.5
+offset_right = -25.0
+offset_bottom = 56.5
+script = ExtResource("19_1w6v2")
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/FindMatch/Search" unique_id=380924607]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -15.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(1, 0)
+texture = ExtResource("19_cbgmd")
+expand_mode = 1
+
+[node name="Title" type="Control" parent="Game/Main" unique_id=221234727]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -344.0
+offset_bottom = -344.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContentFitter" type="Control" parent="Game/Main/Title" unique_id=1515623245]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -569.0
+offset_top = -40.0
+offset_right = 571.0
+offset_bottom = 112.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("22_7k868")
+metadata/_custom_type_script = "uid://cyvlesfwt0m7n"
+
+[node name="Name" type="Label" parent="Game/Main/Title/ContentFitter" unique_id=799534798]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.35
+anchor_right = 0.5
+anchor_bottom = 0.35
+offset_left = -568.0
+offset_top = -72.0
+offset_right = 566.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "FreeSmart"
+label_settings = SubResource("LabelSettings_e08e2")
+horizontal_alignment = 1
+
+[node name="Exit" type="Button" parent="Game/Main/Title/ContentFitter/Name" unique_id=299384532]
+modulate = Color(1, 0.47000003, 0.4788332, 1)
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.9
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 50.0
+focus_mode = 0
+text = "
+"
+script = ExtResource("22_hpc6h")
+metadata/_custom_type_script = "uid://bhu8farmesecv"
+
+[node name="Text" type="Label" parent="Game/Main/Title/ContentFitter/Name/Exit" unique_id=1316747772]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "×"
+label_settings = SubResource("LabelSettings_21xkr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OpeningScreen" type="Node2D" parent="." unique_id=1591927703]
+visible = false
+z_index = 3000
+script = ExtResource("10_d1ilt")
+metadata/_edit_lock_ = true
+
+[node name="Bar" type="Sprite2D" parent="OpeningScreen" unique_id=417356077]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(0, -356.50006)
+scale = Vector2(1152, 65.00004)
+texture = ExtResource("11_6iyac")
+offset = Vector2(0, 1)
+
+[node name="Title" type="Control" parent="OpeningScreen" unique_id=2002796545]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -275.0
+offset_bottom = -275.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Top" type="Label" parent="OpeningScreen/Title" unique_id=780642335]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -55.0
+offset_right = 45.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BADMINTON"
+label_settings = SubResource("LabelSettings_jjgbg")
+vertical_alignment = 2
+
+[node name="Bottom" type="Label" parent="OpeningScreen/Title" unique_id=602062639]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -527.5
+offset_top = 40.0
+offset_right = 527.5
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(474, 55)
+text = "SINGLES MATCHMAKING"
+label_settings = SubResource("LabelSettings_kry3j")
+horizontal_alignment = 1
+
+[node name="Toast" type="Control" parent="." unique_id=1277108275]
+unique_name_in_owner = true
+z_index = 4096
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("13_jkdf5")
+toast_label = ExtResource("14_jkdf5")
+metadata/_edit_lock_ = true
+
+[node name="Transition" type="Node2D" parent="." unique_id=72626882]
+unique_name_in_owner = true
+z_index = 3001
+script = ExtResource("15_wsu2k")
+circle_template = ExtResource("16_h1bgf")
+slide_template = ExtResource("17_b3802")
+metadata/_edit_lock_ = true
+
+[node name="Background" parent="." unique_id=499395652 instance=ExtResource("1_jjgbg")]
+z_index = -4096
+z_as_relative = false
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Title/Title/Exit" to="Title/Title/Exit" method="_on_pressed"]
+[connection signal="pressed" from="Title/Main/Groups/Options/NewGroup/LineEdit/Confirm" to="Title/Main/Groups" method="_on_confirm_pressed"]
+[connection signal="pressed" from="Title/Main/Groups/Options/LoadGroup" to="Title/Main/Groups" method="_on_load_group_pressed"]
+[connection signal="pressed" from="Title/Main/Groups/Options/EditGroup/Name/LineEdit/Confirm" to="Title/Main/Groups" method="_on_confirm_pressed" binds= [true]]
+[connection signal="pressed" from="Title/Main/Groups/Options/EditGroup/Players/Confirm" to="Title/Main/Groups" method="_on_edit_players_confirm_pressed"]
+[connection signal="button_down" from="Title/Main/Groups/Options/DeleteGroup" to="Title/Main/Groups" method="_on_delete_group_button_down"]
+[connection signal="button_up" from="Title/Main/Groups/Options/DeleteGroup" to="Title/Main/Groups" method="_on_delete_group_button_up"]
+[connection signal="child_entered_tree" from="Title/Main/Groups/Scroll/Control/Main" to="Title/Main/Groups/Scroll/Control/NoGroupsLabel" method="_on_child_entered_tree" binds= ["Groups"]]
+[connection signal="child_exiting_tree" from="Title/Main/Groups/Scroll/Control/Main" to="Title/Main/Groups/Scroll/Control/NoGroupsLabel" method="_on_child_exiting_tree" binds= ["Groups"]]
+[connection signal="button_down" from="Title/Main/Players/Options/DeletePlayer" to="Title/Main/Players" method="_on_delete_player_button_down"]
+[connection signal="button_up" from="Title/Main/Players/Options/DeletePlayer" to="Title/Main/Players" method="_on_delete_player_button_up"]
+[connection signal="child_entered_tree" from="Title/Main/Players/Scroll/Control/Main" to="Title/Main/Players/Scroll/Control/NoPlayersLabel" method="_on_child_entered_tree" binds= ["Players"]]
+[connection signal="child_exiting_tree" from="Title/Main/Players/Scroll/Control/Main" to="Title/Main/Players/Scroll/Control/NoPlayersLabel" method="_on_child_exiting_tree" binds= ["Players"]]
+[connection signal="pressed" from="Title/Main/Players/Create/MMR/Info" to="Title/Main/Players/Create/MMR/Info" method="_on_pressed"]
+[connection signal="pressed" from="Title/Main/Players/Create/Confirm" to="Title/Main/Players" method="_on_confirm_pressed"]
+[connection signal="pressed" from="Title/Main/Players/Create/BackPicker" to="Title/Main/Players/Create/BackPicker" method="_on_pressed"]
+[connection signal="text_changed" from="Title/Main/Players/Search" to="Title/Main/Players/Search" method="_on_text_changed"]
+[connection signal="tab_changed" from="Title/Main/TabBar" to="Title/Main" method="_on_tab_changed"]
+[connection signal="pressed" from="Title/Main/AddToGroup" to="Title/Main/Groups" method="_on_add_to_group_pressed"]
+[connection signal="pressed" from="Title/Main/RemoveFromGroup" to="Title/Main/Groups" method="_on_remove_from_group_pressed"]
+[connection signal="child_entered_tree" from="Game/Main/Matches/Scroll/Control/Main" to="Game/Main/Matches/Scroll/Control/NoMatchesLabel" method="_on_child_entered_tree" binds= ["Matches"]]
+[connection signal="child_exiting_tree" from="Game/Main/Matches/Scroll/Control/Main" to="Game/Main/Matches/Scroll/Control/NoMatchesLabel" method="_on_child_exiting_tree" binds= ["Matches"]]
+[connection signal="pressed" from="Game/Main/Matches/MarkScore/Main/Confirm" to="Game/Main" method="_on_confirm_pressed"]
+[connection signal="pressed" from="Game/Main/FindMatch/Options/MatchPlayerWithRandom" to="Game/Main" method="_on_match_player_with_random_pressed"]
+[connection signal="pressed" from="Game/Main/FindMatch/Options/MatchTwoPlayers" to="Game/Main" method="_on_match_two_players_pressed"]
+[connection signal="pressed" from="Game/Main/FindMatch/Options/MatchTwoRandom" to="Game/Main" method="_on_match_two_random_pressed"]
+[connection signal="child_entered_tree" from="Game/Main/FindMatch/Scroll/Control/Main" to="Game/Main/FindMatch/Scroll/Control/NoPlayersLabel" method="_on_child_entered_tree" binds= ["FindMatch"]]
+[connection signal="child_exiting_tree" from="Game/Main/FindMatch/Scroll/Control/Main" to="Game/Main/FindMatch/Scroll/Control/NoPlayersLabel" method="_on_child_exiting_tree" binds= ["FindMatch"]]
+[connection signal="text_changed" from="Game/Main/FindMatch/Search" to="Game/Main/FindMatch/Search" method="_on_text_changed"]
+[connection signal="pressed" from="Game/Main/Title/ContentFitter/Name/Exit" to="Game/Main/Title/ContentFitter/Name/Exit" method="_on_pressed"]
