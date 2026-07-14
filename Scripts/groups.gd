@@ -354,6 +354,7 @@ func _on_delete_group_button_down() -> void:
 	tween.tween_property(
 		group_deleting, "modulate", GROUP_TRANSPARENT_MODULATE, 0.5
 	).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
+	tween.play()
 	
 	var order = group_deleting.get_index()
 	

@@ -613,7 +613,7 @@ func _on_confirm_pressed() -> void:
 	shrink_tween.play()
 	await shrink_tween.finished
 	
-	# >>>>>>>>>>CLEAN UP>>>>>>>>>>
+	# >>>>>>>--- CLEAN UP --->>>>>>>
 	
 	matchup.queue_free()
 	matchup_data.erase(current_mark_score_data[0])
@@ -621,7 +621,7 @@ func _on_confirm_pressed() -> void:
 	player_match_data.erase(current_mark_score_data[1])
 	player_match_data.erase(current_mark_score_data[0])
 	
-	# <<<<<<<<<<CLEAN UP<<<<<<<<<<
+	# <<<<<<<--- CLEAN UP ---<<<<<<<
 
 func init(group_name: String):
 	match_player_with_random.disabled = true
@@ -629,9 +629,17 @@ func init(group_name: String):
 	mark_score.disabled = true
 	title_name.text = group_name
 	
+	# >>>>>>>--- RESET --->>>>>>>
+	
 	player_match_data = {}
 	matchup_data = {}
 	mark_score_data = []
+	for matchup: Node in matches_scroll.get_children():
+		if not matchup.is_class("HBoxContainer"):
+			continue
+		matchup.queue_free()
+	
+	# <<<<<<<--- RESET ---<<<<<<<
 	
 	set_mark_score_mode(0)
 	set_mode(0)

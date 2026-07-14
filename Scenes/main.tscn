@@ -1523,11 +1523,6 @@ vertical_alignment = 1
 script = ExtResource("10_6iyac")
 id = "Matches"
 
-[node name="Ruby" type="Sprite2D" parent="Game/Main/Matches/Scroll/Control/NoMatchesLabel" unique_id=758938136]
-position = Vector2(107, -15.5)
-scale = Vector2(0.4278011, 0.4278011)
-texture = ExtResource("11_b3802")
-
 [node name="Grassy" type="Sprite2D" parent="Game/Main/Matches/Scroll/Control/NoMatchesLabel" unique_id=2002977425]
 position = Vector2(496, 22.499985)
 scale = Vector2(0.04582991, 0.045829915)
@@ -1865,7 +1860,6 @@ horizontal_alignment = 1
 
 [node name="Exit" type="Button" parent="Game/Main/Title/ContentFitter/Name" unique_id=299384532]
 modulate = Color(1, 0.47000003, 0.4788332, 1)
-clip_contents = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -1895,6 +1889,29 @@ text = "×"
 label_settings = SubResource("LabelSettings_21xkr")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HoldText" type="Label" parent="Game/Main/Title/ContentFitter/Name/Exit" unique_id=654398487]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "[0.0]"
+label_settings = SubResource("LabelSettings_6bp64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HoldProgress" type="Panel" parent="Game/Main/Title/ContentFitter/Name/Exit/HoldText" unique_id=999301483]
+self_modulate = Color(1.224127, 1.224127, 1.224127, 0.5)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_jkdf5")
 
 [node name="OpeningScreen" type="Node2D" parent="." unique_id=1591927703]
 visible = false
@@ -2017,4 +2034,5 @@ metadata/_edit_lock_ = true
 [connection signal="child_entered_tree" from="Game/Main/FindMatch/Scroll/Control/Main" to="Game/Main/FindMatch/Scroll/Control/NoPlayersLabel" method="_on_child_entered_tree" binds= ["FindMatch"]]
 [connection signal="child_exiting_tree" from="Game/Main/FindMatch/Scroll/Control/Main" to="Game/Main/FindMatch/Scroll/Control/NoPlayersLabel" method="_on_child_exiting_tree" binds= ["FindMatch"]]
 [connection signal="text_changed" from="Game/Main/FindMatch/Search" to="Game/Main/FindMatch/Search" method="_on_text_changed"]
-[connection signal="pressed" from="Game/Main/Title/ContentFitter/Name/Exit" to="Game/Main/Title/ContentFitter/Name/Exit" method="_on_pressed"]
+[connection signal="button_down" from="Game/Main/Title/ContentFitter/Name/Exit" to="Game/Main/Title/ContentFitter/Name/Exit" method="_on_button_down"]
+[connection signal="button_up" from="Game/Main/Title/ContentFitter/Name/Exit" to="Game/Main/Title/ContentFitter/Name/Exit" method="_on_button_up"]
