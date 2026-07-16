@@ -43,6 +43,7 @@ extends Control
 var create_type = null
 var player_data: Dictionary
 var selected_players: Array[PlayerBanner] = []
+const DATA_TEMPLATE = {"mmr": 0, "rd": 35.0, "back": "", "last_played": []}
 
 var players_path = "user://Save/Players"
 
@@ -240,15 +241,15 @@ func _ready() -> void:
 		var file = FileAccess.open(file_path, FileAccess.READ_WRITE)
 		var data = file.get_var()
 		if typeof(data) != TYPE_DICTIONARY:
-			data = {"mmr": 0, "back": "", "last_played": []}
+			data = DATA_TEMPLATE.duplicate()
 			
 			file.seek(0)
 			file.store_var(data)
 			
 			toast.toast("The player: %s was corrupted!" % without_extention, 5 + i, {
 				"modulate" = Color(1, 0.4, 0.4)})
-		if "last_played" not in data:
-			data.last_played = []
+		if "rd" not in data:
+			data.rd = 300.0
 			
 			file.seek(0)
 			file.store_var(data)
@@ -347,8 +348,13 @@ func _on_confirm_pressed() -> void:
 	
 	if current_create_type == "edit":
 		if single_player:
+			var rd = 0
+			if rd in player_data[file_name]:
+				rd = player_data[file_name]
+			else:
+				rd = DATA_TEMPLATE.rd
 			var file_path = players_path + "/" + file_name + ".player"
-			var data = {"mmr": mmr, "back": back, "last_played": []}
+			var data = {"mmr": mmr, "back": back, "last_played": [], "rd": rd}
 			if file_name != single_player.file_name:
 				var old_file_name = single_player.file_name
 				var old_file_path = players_path + "/" + old_file_name + ".player"

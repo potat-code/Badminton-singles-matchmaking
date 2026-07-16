@@ -481,38 +481,49 @@ func sanitize_text(new_text: String, line_edit: LineEdit, was_submitted: bool = 
 
 func _on_confirm_pressed() -> void:
 	var current_mark_score_data = mark_score_data
-	if current_mark_score_data[-1] == 1:
+	var order = current_mark_score_data.pop_at(-1)
+	if order == 1:
 		current_mark_score_data.reverse()
-		current_mark_score_mode.pop(0)
-	else:
-		current_mark_score_mode.pop(-1)
 	
 	set_mark_score_mode(0)
 	
 	var first_file_name = current_mark_score_data[0]
 	var second_file_name = current_mark_score_data[1]
 	
-	var first_score
-	var second_score
+	var first_score = int(player_one_score.text)
+	var second_score = int(player_two_score.text)
+	var first_data = players.player_data[first_file_name]
+	var second_data = players.player_data[second_file_name]
+	#var first_mmr
+	#var second_mmr
+	#
+	#first_mmr = players.player_data[first_file_name].mmr
+	#second_mmr = players.player_data[second_file_name].mmr
+	#
+	#var margin = abs(first_score - second_score)
+	#var base = 8.0 * sqrt(margin)
+	#var expected = 1.0 / (1 + 10.0 ** ((second_mmr - first_mmr) / 4000.0))
+	#var actual = 1.0 if first_score > second_score else 0.0
+	#var gain = base * (actual - expected) * 4.0
+	#gain = clamp(round(gain), -50, 50)
+	#gain = int(gain)
 	
-	var first_mmr
-	var second_mmr
+	var first_gain_data = GlickoHandler.get_gain(first_score, second_score, first_data, second_data)
+	var second_gain_data = GlickoHandler.get_gain(second_score, first_score, second_data, first_data)
 	
-	first_score = int(player_one_score.text)
-	second_score = int(player_two_score.text)
+	var temp_old_mmr = players.player_data[first_file_name].mmr
+	print("%s mmr += %d (%d -> %d)" % [
+		first_file_name, first_gain_data.mmr, temp_old_mmr, temp_old_mmr + first_gain_data.mmr
+	])
+	print("%s mmr += %d (%d -> %d)" % [
+		second_file_name, second_gain_data.mmr, temp_old_mmr, temp_old_mmr + second_gain_data.mmr
+	])
 	
-	first_mmr = players.player_data[first_file_name].mmr
-	second_mmr = players.player_data[second_file_name].mmr
+	players.player_data[first_file_name].mmr += first_gain_data.mmr
+	players.player_data[second_file_name].mmr += second_gain_data.mmr
 	
-	var margin = abs(first_score - second_score)
-	var base = 8.0 * sqrt(margin)
-	var expected = 1.0 / (1 + 10.0 ** ((second_mmr - first_mmr) / 4000.0))
-	var actual = 1.0 if first_score > second_score else 0.0
-	var gain = base * (actual - expected) * 4.0
-	gain = clamp(round(gain), -50, 50)
-	
-	players.player_data[first_file_name].mmr += gain
-	players.player_data[second_file_name].mmr -= gain
+	players.player_data[first_file_name].rd += first_gain_data.rd
+	players.player_data[second_file_name].rd += second_gain_data.rd
 	
 	save_player_data(first_file_name, players.player_data[first_file_name])
 	save_player_data(second_file_name, players.player_data[second_file_name])
@@ -525,9 +536,11 @@ func _on_confirm_pressed() -> void:
 	
 	var matchup_destroy_ignore = []
 	var player_banners: Array[PlayerBanner] = [matchup.get_children()[0], matchup.get_children()[2]]
+	if order == 1:
+		player_banners.reverse()
 	
-	for player_banner: PlayerBanner in player_banners:		
-		var this_gain = gain if i == 0 else -gain
+	for player_banner: PlayerBanner in player_banners:
+		var this_gain = first_gain_data.mmr if i == 0 else second_gain_data.mmr
 		var this_sign = sign(this_gain)
 		
 		var cover = ColorRect.new()
@@ -546,11 +559,11 @@ func _on_confirm_pressed() -> void:
 		var mmr_gain_label: Label = MMR_GAIN_LABEL.instantiate()
 		if i == 0:
 			mmr_gain_label.text = "%dMMR (%s%d)" % [
-				first_mmr + this_gain, "+" if this_sign == 1 else "", this_gain
+				first_data.mmr + this_gain, "+" if this_sign == 1 else "", this_gain
 			]
 		else:
 			mmr_gain_label.text = "%dMMR (%s%d)" % [
-				second_mmr + this_gain, "+" if this_sign == 1 else "", this_gain
+				first_data.mmr + this_gain, "+" if this_sign == 1 else "", this_gain
 			]
 		mmr_gain_label.anchor_bottom = 1.5
 		mmr_gain_label.anchor_left = 0
