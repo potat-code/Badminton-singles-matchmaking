@@ -1,6 +1,6 @@
 # Badminton singles matchmaking
 
-A tool that automatically tracks players' elo and handles matchmaking.
+A tool that automatically tracks players' MMR using a glicko-esque system and handles matchmaking.
 To use, simple unpack and run the executable found at https://github.com/potat-code/Badminton-singles-matchmaking/releases
 
 ! NOTE !
